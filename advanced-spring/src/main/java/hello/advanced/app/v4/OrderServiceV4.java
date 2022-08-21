@@ -13,7 +13,8 @@ public class OrderServiceV4 {
 	private final LogTrace trace;
 	
 	public void orderItem(String itemId) {
-		
+		// 제너릭에서 반환 타입이 필요한데, 반환할 내용이 없으면 'Void' 타입을 사용하고 null을 반환하면 된다.
+		// 제너릭은 기본 타입인 void, int 등을 선언할 수 없다.
 		AbstractTemplate<Void> template = new AbstractTemplate<>(trace) {
 
 			@Override
