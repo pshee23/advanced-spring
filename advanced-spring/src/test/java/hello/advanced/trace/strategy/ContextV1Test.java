@@ -49,7 +49,7 @@ public class ContextV1Test {
 	}
 	
 	@Test
-	void strategyV3() { // 익명 클래스를 편하게 만드는법
+	void strategyV3() { // 익명 클래스를 변수에 담아두지 말고, 생성하면서 바로 'ContextV1'에 전달해도 된다.
 		ContextV1 contextV1 = new ContextV1(new Strategy() {
 			@Override
 			public void call() {
@@ -69,7 +69,7 @@ public class ContextV1Test {
 	}
 	
 	@Test
-	void strategyV4() { // lambda를 사용해서 익명 클래스를 편하게 만드는법
+	void strategyV4() { // 인터페이스에 메서드가 1개만 있으면 람다로 변경할 수 있다. 
 		ContextV1 contextV1 = new ContextV1(() -> log.info("비즈니스 로직1 실행"));
 		contextV1.execute();
 
